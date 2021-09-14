@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const urlSchema = new.mongoose.Schema({
+const urlSchema = new mongoose.Schema({
     urlCode: String,
     longURL: String, 
     shortURL: String,
