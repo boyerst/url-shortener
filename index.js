@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -20,10 +21,11 @@ app.use('/shorten', require('./routes/url'));
 //Route-> Home Page
 app.use('/', async (req, res) => {
   const urls = await Url.find();
-  res.render('home', {
-    urls: urls
-  });
+  res.render('home', {urls: urls});
 });
+
+
+
 
 
 

@@ -30,42 +30,47 @@
                 </button>
             </div>
         </form>
+
+
+        
         <!-- URLs Table -->
-        <div style="margin: auto," class="row justify-content-md-center table-responsive-sm">
-            <table style="padding: 0 25px 0 25px;" class="table table-hoveer col-12 col-md-10 col-lg-6">
+        <div style="margin: auto;" class="row justify-content-md-center table-responsive-sm">
+            <table style="padding: 0 25px 0 25px;" class="table table-hover col-12 col-md-10 col-lg-6">
                 <thead>
                     <tr>
-                        <th>
-                            # ID
-                        </th>
-                        <th>
-                            Long URL
-                        </th>
-                        <th>
-                            Shorrt URL
-                        </th>
-                        <th>
-                            Clicks
-                        </th>
+                        <th># ID</th>
+                        <th>Long URL</th>
+                        <th>Short URL</th>
+                        <th>Clicks</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <% var index = 1; urls.forEach(url => { %>
                     <tr>
-                        <th>
+                        <th scope="row">
+                            <%=index %>
                         </th>
                         <td>
-                            <a target="_blank" href="#"> original link goes here</a>
+                            <a target="_blank" href="<%= url.longUrl %>">
+                                <%= url.longUrl %>
+                            </a>
                         </td>
                         <td>
-                            <a target="_blank" href="#"> short Link goes here</a>
+                            <a target="_blank" href="<%= url.urlCode %>">
+                                <%= url.urlCode %>
+                            </a>
                         </td>
                         <td>
-                            0
+                            <%= url.clicks %>
                         </td>
                     </tr>
+                    <% index+=1; }) %>
                 </tbody>
             </table>
         </div>
+
+
+
         <footer class="footer container-fluid my-4">
             <hr>
             <span class="row justify-content-center text-muted"> &copy;
